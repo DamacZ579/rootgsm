@@ -1,0 +1,270 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const articulos = (await getCollection('blog'))
+  .sort((a, b) => b.data.fecha.valueOf() - a.data.fecha.valueOf())
+  .slice(0, 3);
+---
+
+<Base
+  titulo="GSM Soluciones Jurídicas | Abogados en Quetzaltenango, Xela"
+  descripcion="Abogados y Notarios en Quetzaltenango (Xela), Guatemala. Servicios notariales, derecho civil de familia, laboral, penal y trámites municipales. Atención presencial y virtual."
+>
+
+<style>
+  .hero {
+    min-height: 92vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; padding: 0 var(--px); gap: 48px;
+    background: var(--negro-alt); position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0; width: 50%;
+    background: linear-gradient(135deg, transparent 40%, rgba(201,168,76,0.03) 100%);
+    border-left: 0.5px solid var(--oro-borde); pointer-events: none;
+  }
+  .hero-contenido { position: relative; z-index: 2; }
+  .hero-tag {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--oro); margin-bottom: 24px;
+  }
+  .hero-tag::before { content: ''; width: 32px; height: 0.5px; background: var(--oro); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5.5vw, 62px);
+    font-weight: 300; line-height: 1.12; color: var(--blanco); margin-bottom: 8px;
+  }
+  .hero h1 em { font-style: italic; color: var(--oro); }
+  .hero-ciudad {
+    font-family: var(--serif); font-size: clamp(13px, 1.8vw, 17px);
+    color: var(--gris); font-weight: 300; letter-spacing: 2px; margin-bottom: 28px;
+  }
+  .hero-ciudad strong { color: rgba(201,168,76,0.7); font-weight: 400; }
+  .hero-desc {
+    font-size: 14px; color: var(--gris); line-height: 1.85;
+    max-width: 400px; font-weight: 300; margin-bottom: 36px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-emblema {
+    position: relative; z-index: 2;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .emblema-anillo {
+    width: clamp(180px, 22vw, 260px); height: clamp(180px, 22vw, 260px);
+    border: 0.5px solid var(--oro-borde); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; position: relative;
+  }
+  .emblema-anillo::before {
+    content: ''; position: absolute; inset: 14px;
+    border: 0.5px solid rgba(201,168,76,0.1); border-radius: 50%;
+  }
+  .emblema-gsm {
+    font-family: var(--serif); font-size: clamp(48px, 7vw, 72px);
+    color: rgba(201,168,76,0.13); font-weight: 300; letter-spacing: 6px;
+    line-height: 1; text-align: center;
+  }
+  .emblema-sub {
+    font-size: 9px; letter-spacing: 5px; color: rgba(201,168,76,0.25);
+    text-transform: uppercase; margin-top: 8px; text-align: center;
+  }
+
+  .srv-num {
+    font-family: var(--serif); font-size: 38px;
+    color: rgba(201,168,76,0.18); font-weight: 300; line-height: 1; margin-bottom: 14px;
+  }
+  .srv-titulo {
+    font-family: var(--serif); font-size: 20px;
+    font-weight: 400; color: var(--blanco); margin-bottom: 8px; line-height: 1.2;
+  }
+  .srv-desc { font-size: 12px; color: var(--gris); line-height: 1.75; font-weight: 300; }
+  .srv-enlace {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--oro); margin-top: 14px; transition: gap .2s;
+  }
+  .srv-enlace:hover { gap: 10px; }
+
+  .proceso-lista { display: flex; flex-direction: column; }
+  .proceso-item {
+    display: flex; gap: 28px; align-items: flex-start;
+    padding: 28px 0; border-bottom: 0.5px solid rgba(201,168,76,0.07);
+  }
+  .proceso-item:last-child { border-bottom: none; }
+  .proceso-num {
+    font-family: var(--serif); font-size: 52px;
+    color: rgba(201,168,76,0.13); font-weight: 300; line-height: 1; min-width: 52px;
+  }
+  .proceso-info h3 { font-size: 15px; font-weight: 500; color: var(--blanco); margin-bottom: 6px; }
+  .proceso-info p { font-size: 13px; color: var(--gris); line-height: 1.75; font-weight: 300; }
+
+  .stat-num {
+    font-family: var(--serif); font-size: clamp(40px,6vw,60px);
+    color: var(--oro); font-weight: 300; line-height: 1;
+  }
+  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin-top: 8px; }
+
+  /* Blog preview */
+  .blog-prev-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--oro-tenue); margin-top: 48px; }
+  .blog-prev-card { background: var(--negro-alt); padding: 32px 28px; display: flex; flex-direction: column; }
+  .blog-cat { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--oro); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .blog-cat::before { content: ''; width: 16px; height: 0.5px; background: var(--oro); }
+  .blog-prev-titulo { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--blanco); line-height: 1.3; margin-bottom: 12px; flex-grow: 1; }
+  .blog-prev-desc { font-size: 12px; color: var(--gris); line-height: 1.75; font-weight: 300; margin-bottom: 20px; }
+  .blog-prev-leer { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--oro); }
+
+  .cta-central {
+    background: var(--negro-alt); border: 0.5px solid var(--oro-borde);
+    margin: 0 var(--px) 80px; padding: 56px clamp(24px,6vw,72px); text-align: center;
+  }
+  .cta-central h2 { font-family: var(--serif); font-size: clamp(26px,4vw,40px); font-weight: 300; margin-bottom: 12px; }
+  .cta-central h2 em { font-style: italic; color: var(--oro); }
+  .cta-central p { font-size: 14px; color: var(--gris); margin-bottom: 28px; font-weight: 300; }
+  .cta-fila { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .cta-wa {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: #25D366; border: 0.5px solid rgba(37,211,102,0.3);
+    padding: 13px 28px; transition: background .2s;
+  }
+  .cta-wa:hover { background: rgba(37,211,102,0.08); }
+
+  @media(max-width:768px){
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 56px; padding-bottom: 56px; }
+    .hero-emblema { display: none; }
+    .cta-central { margin: 0 0 56px; }
+    .blog-prev-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- HERO -->
+<section class="hero" aria-label="Encabezado principal">
+  <div class="hero-contenido">
+    <div class="hero-tag">Abogados y Notarios · Quetzaltenango, Xela</div>
+    <h1>Certeza jurídica<br>para proteger<br>lo que más <em>importa.</em></h1>
+    <p class="hero-ciudad">Sirviendo a <strong>Quetzaltenango</strong> y el occidente de Guatemala</p>
+    <p class="hero-desc">En GSM Soluciones Jurídicas trabajamos para garantizar la seguridad legal de cada cliente, protegiendo su patrimonio y sus derechos en cada etapa del proceso.</p>
+    <div class="hero-btns">
+      <a href="/contacto" class="btn-oro">Agendar cita</a>
+      <a href="/servicios" class="btn-linea">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-emblema" aria-hidden="true">
+    <div class="emblema-anillo">
+      <div>
+        <div class="emblema-gsm">GSM</div>
+        <div class="emblema-sub">Quetzaltenango · GT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-item">✦ <strong>Xela</strong> y occidente de Guatemala</div>
+  <div class="trust-item">✦ Atención <strong>presencial y virtual</strong></div>
+  <div class="trust-item">✦ Respuesta en <strong>24 horas</strong></div>
+  <div class="trust-item">✦ Colegiados <strong>activos</strong></div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="seccion">
+  <div class="eyebrow">Áreas de práctica</div>
+  <h2 class="titulo-seccion">Soluciones jurídicas<br>a su <em>medida</em></h2>
+  <p class="subtitulo-seccion">Cobertura integral en las principales ramas del derecho guatemalteco, con atención personalizada en cada caso.</p>
+  <div class="grilla grilla-3">
+    {[
+      { num:'01', titulo:'Servicios Notariales', desc:'Escrituras, contratos, compraventa de inmuebles y gestión completa ante el Registro de la Propiedad.', href:'/servicios#notarial' },
+      { num:'02', titulo:'Asuntos Civiles de Familia', desc:'Divorcios, pensiones alimenticias, patria potestad, guardas y sucesiones hereditarias.', href:'/servicios#civil' },
+      { num:'03', titulo:'Juicios Laborales', desc:'Representación de trabajadores y empresas ante los Juzgados de Trabajo de Quetzaltenango.', href:'/servicios#laboral' },
+      { num:'04', titulo:'Trámites Municipales', desc:'Gestiones ante la Municipalidad de Quetzaltenango y entidades administrativas del occidente.', href:'/servicios#municipal' },
+      { num:'05', titulo:'Derecho Penal', desc:'Defensa penal y representación de víctimas ante el MP y tribunales penales de Xela.', href:'/servicios#penal' },
+      { num:'06', titulo:'Jurisdicción Voluntaria', desc:'Cambios de nombre, rectificación de partidas y demás diligencias ante juez competente.', href:'/servicios#voluntaria' },
+    ].map(s => (
+      <div class="card">
+        <div class="srv-num">{s.num}</div>
+        <div class="linea-oro"></div>
+        <h3 class="srv-titulo">{s.titulo}</h3>
+        <p class="srv-desc">{s.desc}</p>
+        <a href={s.href} class="srv-enlace">Ver detalle →</a>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- PROCESO + STATS -->
+<section class="seccion seccion-alt">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;max-width:var(--max);margin:0 auto;">
+    <div>
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2 class="titulo-seccion">Un proceso <em>claro</em><br>y sin sorpresas</h2>
+      <p class="subtitulo-seccion">Desde la primera llamada hasta el cierre del caso, usted sabe exactamente qué está pasando y cuánto cuesta.</p>
+      <a href="/contacto" class="btn-oro">Agendar cita</a>
+    </div>
+    <div class="proceso-lista">
+      {[
+        { n:'1', t:'Consulta inicial', d:'Evaluamos su caso de forma confidencial, presencial en nuestra oficina de Quetzaltenango o por videollamada.' },
+        { n:'2', t:'Diagnóstico jurídico', d:'Analizamos las opciones legales disponibles y le explicamos cuál es la mejor ruta para su situación.' },
+        { n:'3', t:'Propuesta y honorarios', d:'Presentamos un plan de acción con costos definidos desde el inicio. Sin cobros inesperados.' },
+        { n:'4', t:'Ejecución y seguimiento', d:'Actuamos con diligencia y le mantenemos informado en cada etapa hasta el cierre del caso.' },
+      ].map(p => (
+        <div class="proceso-item">
+          <div class="proceso-num">{p.n}</div>
+          <div class="proceso-info">
+            <h3>{p.t}</h3>
+            <p>{p.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="grilla grilla-4" style="margin-top:48px;">
+    {[
+      { num:'+10', label:'Años de experiencia' },
+      { num:'Xela', label:'Con sede en Quetzaltenango' },
+      { num:'2', label:'Abogados especializados' },
+      { num:'24h', label:'Tiempo de respuesta' },
+    ].map(s => (
+      <div class="card" style="text-align:center;padding:40px 20px;">
+        <div class="stat-num">{s.num}</div>
+        <div class="stat-label">{s.label}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+{articulos.length > 0 && (
+  <section class="seccion">
+    <div class="eyebrow">Blog jurídico</div>
+    <h2 class="titulo-seccion">Información legal<br>para <em>Guatemala</em></h2>
+    <p class="subtitulo-seccion">Artículos escritos por nuestro equipo para ayudarle a entender sus derechos.</p>
+    <div class="blog-prev-grid">
+      {articulos.map(a => (
+        <a href={`/blog/${a.slug}`} class="blog-prev-card">
+          <div class="blog-cat">{a.data.categoria}</div>
+          <h3 class="blog-prev-titulo">{a.data.titulo}</h3>
+          <p class="blog-prev-desc">{a.data.descripcion}</p>
+          <span class="blog-prev-leer">Leer artículo →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+
+<!-- CTA -->
+<div class="cta-central">
+  <h2>¿Necesita asesoría<br><em>jurídica en Xela?</em></h2>
+  <p>Atención personalizada — presencial en Xela o por videollamada.</p>
+  <div class="cta-fila">
+    <a href="/contacto" class="btn-oro">Agendar cita</a>
+    <a href="https://wa.me/50242923804" target="_blank" rel="noopener" class="cta-wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp · 4292 3804
+    </a>
+  </div>
+</div>
+
+</Base>

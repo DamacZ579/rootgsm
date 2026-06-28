@@ -1,0 +1,177 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  titulo="Servicios Jurídicos en Quetzaltenango | GSM Soluciones Jurídicas"
+  descripcion="Servicios notariales, derecho civil de familia, juicios laborales, trámites municipales, derecho penal y jurisdicción voluntaria en Quetzaltenango, Xela."
+>
+
+<style>
+  .srv-detalle { scroll-margin-top: 80px; padding: 72px var(--px); }
+  .srv-detalle:nth-child(even) { background: var(--negro-alt); }
+  .srv-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+  .srv-inner.reverse { direction: rtl; }
+  .srv-inner.reverse > * { direction: ltr; }
+  .srv-tag { display: inline-block; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--negro); background: var(--oro); padding: 4px 12px; margin-bottom: 20px; }
+  .srv-h2 { font-family: var(--serif); font-size: clamp(26px,4vw,38px); font-weight: 300; line-height: 1.2; margin-bottom: 16px; }
+  .srv-h2 em { font-style: italic; color: var(--oro); }
+  .srv-p { font-size: 14px; color: var(--gris); line-height: 1.85; font-weight: 300; margin-bottom: 28px; }
+  .srv-lista { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .srv-lista li { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; color: var(--gris); font-weight: 300; line-height: 1.6; }
+  .srv-lista li::before { content: '—'; color: var(--oro); flex-shrink: 0; margin-top: 2px; }
+  .srv-panel { background: var(--negro-card); border: 0.5px solid var(--oro-borde); padding: 40px 32px; display: flex; flex-direction: column; gap: 20px; }
+  .srv-panel-num { font-family: var(--serif); font-size: 80px; color: rgba(201,168,76,0.08); font-weight: 300; line-height: 1; align-self: flex-end; }
+  .srv-cita { font-family: var(--serif); font-size: 20px; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.5; font-weight: 300; }
+  .srv-cita-autor { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--oro); }
+  @media(max-width:768px){ .srv-inner, .srv-inner.reverse { grid-template-columns: 1fr; direction: ltr; } .srv-panel { display: none; } }
+</style>
+
+<header class="page-hero">
+  <div class="eyebrow">Áreas de práctica</div>
+  <h1>Nuestros <em>servicios</em><br>jurídicos</h1>
+  <p class="page-hero-sub">Asesoría legal integral en Quetzaltenango. Cada caso es atendido con dedicación personalizada y transparencia en todo momento.</p>
+</header>
+
+<section class="srv-detalle" id="notarial">
+  <div class="srv-inner">
+    <div>
+      <div class="srv-tag">01 · Notarial</div>
+      <h2 class="srv-h2">Servicios <em>Notariales</em></h2>
+      <p class="srv-p">Como Notarios autorizados en Guatemala, damos fe pública a los actos y contratos más importantes de su vida. Gestionamos cada trámite ante el Registro de la Propiedad, la SAT y demás entidades competentes.</p>
+      <ul class="srv-lista">
+        <li>Escrituras públicas de compraventa de inmuebles</li>
+        <li>Investigación de inmuebles en el Registro de la Propiedad</li>
+        <li>Contratos de arrendamiento, préstamo y donación</li>
+        <li>Pago de impuestos y aranceles registrales</li>
+        <li>Inscripción y seguimiento en el Registro de la Propiedad</li>
+        <li>Autenticaciones de firmas y documentos</li>
+        <li>Actas notariales de diversa naturaleza</li>
+        <li>Gestiones y trámites municipales post compraventa</li>
+      </ul>
+      <br/><a href="/contacto" class="btn-oro">Consultar este servicio</a>
+    </div>
+    <div class="srv-panel">
+      <div class="srv-panel-num">01</div>
+      <div class="srv-cita">"Hágalo respaldado por profesionales en cada etapa."</div>
+      <div class="srv-cita-autor">GSM Soluciones Jurídicas · Xela</div>
+    </div>
+  </div>
+</section>
+
+<section class="srv-detalle" id="civil">
+  <div class="srv-inner reverse">
+    <div>
+      <div class="srv-tag">02 · Civil</div>
+      <h2 class="srv-h2">Asuntos Civiles<br>de <em>Familia</em></h2>
+      <p class="srv-p">Los asuntos de familia requieren sensibilidad y conocimiento técnico. Acompañamos a nuestros clientes en los momentos más delicados con profesionalismo y discreción.</p>
+      <ul class="srv-lista">
+        <li>Divorcios voluntarios y contenciosos</li>
+        <li>Pensiones alimenticias y modificación de cuotas</li>
+        <li>Patria potestad, guarda y custodia</li>
+        <li>Reconocimientos de hijo</li>
+        <li>Sucesiones hereditarias testamentarias e intestadas</li>
+        <li>Uniones de hecho</li>
+        <li>Procesos de adopción</li>
+      </ul>
+      <br/><a href="/contacto" class="btn-oro">Consultar este servicio</a>
+    </div>
+    <div class="srv-panel">
+      <div class="srv-panel-num">02</div>
+      <div class="srv-cita">"Certeza jurídica para proteger lo que más importa."</div>
+      <div class="srv-cita-autor">GSM Soluciones Jurídicas · Xela</div>
+    </div>
+  </div>
+</section>
+
+<section class="srv-detalle" id="laboral">
+  <div class="srv-inner">
+    <div>
+      <div class="srv-tag">03 · Laboral</div>
+      <h2 class="srv-h2">Juicios <em>Laborales</em></h2>
+      <p class="srv-p">Representamos tanto a trabajadores como a empleadores ante los Juzgados de Trabajo y Previsión Social de Quetzaltenango, con estrategias claras y eficientes.</p>
+      <ul class="srv-lista">
+        <li>Despidos injustificados e indemnizaciones</li>
+        <li>Cobro de prestaciones laborales (vacaciones, aguinaldo, bono 14)</li>
+        <li>Discriminación y acoso laboral</li>
+        <li>Negociaciones y acuerdos extrajudiciales</li>
+        <li>Representación de empresas en juicios laborales</li>
+        <li>Contratos individuales y colectivos de trabajo</li>
+      </ul>
+      <br/><a href="/contacto" class="btn-oro">Consultar este servicio</a>
+    </div>
+    <div class="srv-panel">
+      <div class="srv-panel-num">03</div>
+      <div class="srv-cita">"Sus derechos laborales merecen defensa profesional."</div>
+      <div class="srv-cita-autor">GSM Soluciones Jurídicas · Xela</div>
+    </div>
+  </div>
+</section>
+
+<section class="srv-detalle" id="municipal">
+  <div class="srv-inner reverse">
+    <div>
+      <div class="srv-tag">04 · Municipal</div>
+      <h2 class="srv-h2">Trámites <em>Municipales</em></h2>
+      <p class="srv-p">Gestionamos sus trámites ante la Municipalidad de Quetzaltenango y otras entidades administrativas del occidente del país.</p>
+      <ul class="srv-lista">
+        <li>Licencias de construcción y uso de suelo</li>
+        <li>Certificaciones y constancias municipales</li>
+        <li>Recursos administrativos y apelaciones</li>
+      </ul>
+      <br/><a href="/contacto" class="btn-oro">Consultar este servicio</a>
+    </div>
+    <div class="srv-panel">
+      <div class="srv-panel-num">04</div>
+      <div class="srv-cita">"Gestionamos por usted ante las entidades que correspondan."</div>
+      <div class="srv-cita-autor">GSM Soluciones Jurídicas · Xela</div>
+    </div>
+  </div>
+</section>
+
+<section class="srv-detalle" id="penal">
+  <div class="srv-inner">
+    <div>
+      <div class="srv-tag">05 · Penal</div>
+      <h2 class="srv-h2">Derecho <em>Penal</em></h2>
+      <p class="srv-p">Brindamos defensa penal efectiva y representación de víctimas ante el Ministerio Público, Juzgados de Paz y Tribunales Penales del departamento de Quetzaltenango.</p>
+      <ul class="srv-lista">
+        <li>Defensa penal en todas las etapas del proceso</li>
+        <li>Representación de víctimas y querellantes adhesivos</li>
+        <li>Criterios de oportunidad y mediaciones penales</li>
+        <li>Suspensiones condicionales de la persecución penal</li>
+        <li>Recursos de apelación y casación penal</li>
+        <li>Delitos contra el patrimonio, personas y familia</li>
+      </ul>
+      <br/><a href="/contacto" class="btn-oro">Consultar este servicio</a>
+    </div>
+    <div class="srv-panel">
+      <div class="srv-panel-num">05</div>
+      <div class="srv-cita">"Una defensa técnica sólida marca la diferencia."</div>
+      <div class="srv-cita-autor">GSM Soluciones Jurídicas · Xela</div>
+    </div>
+  </div>
+</section>
+
+<section class="srv-detalle" id="voluntaria">
+  <div class="srv-inner reverse">
+    <div>
+      <div class="srv-tag">06 · Jurisdicción Voluntaria</div>
+      <h2 class="srv-h2">Asuntos de Jurisdicción<br><em>Voluntaria</em></h2>
+      <p class="srv-p">Tramitamos diligencias voluntarias ante juez competente cuando la ley lo requiere, de forma ágil y sin contratiempos para el cliente.</p>
+      <ul class="srv-lista">
+        <li>Cambio de nombre propio o apellido</li>
+        <li>Rectificación de partidas de nacimiento</li>
+        <li>Declaratorias de ausencia y muerte presunta</li>
+        <li>Reconocimiento de documentos extranjeros</li>
+      </ul>
+      <br/><a href="/contacto" class="btn-oro">Consultar este servicio</a>
+    </div>
+    <div class="srv-panel">
+      <div class="srv-panel-num">06</div>
+      <div class="srv-cita">"Cada trámite tiene su proceso — nosotros lo conocemos."</div>
+      <div class="srv-cita-autor">GSM Soluciones Jurídicas · Xela</div>
+    </div>
+  </div>
+</section>
+
+</Base>

@@ -1,0 +1,209 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  categoria: string;
+  fecha: Date;
+  slug: string;
+}
+
+const { titulo, descripcion, categoria, fecha, slug } = Astro.props;
+const canonicalURL = new URL(`/blog/${slug}`, Astro.site).href;
+
+const fechaFormateada = fecha.toLocaleDateString('es-GT', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+
+const schemaArticulo = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "GSM Soluciones Jurídicas",
+  "url": "https://abogadosxelagsm.com",
+  "article": {
+    "@type": "Article",
+    "headline": titulo,
+    "description": descripcion,
+    "datePublished": fecha.toISOString(),
+    "author": {
+      "@type": "Organization",
+      "name": "GSM Soluciones Jurídicas"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "GSM Soluciones Jurídicas",
+      "url": "https://abogadosxelagsm.com"
+    }
+  }
+});
+---
+
+<Base titulo={`${titulo} | GSM Soluciones Jurídicas`} descripcion={descripcion} canonical={canonicalURL}>
+
+  <script type="application/ld+json" set:html={schemaArticulo} />
+
+  <header class="page-hero articulo-hero">
+    <div class="articulo-meta">
+      <span class="articulo-categoria">{categoria}</span>
+      <span class="articulo-fecha">{fechaFormateada}</span>
+    </div>
+    <h1>{titulo}</h1>
+    <p class="page-hero-sub">{descripcion}</p>
+  </header>
+
+  <div class="articulo-wrapper">
+    <article class="articulo-cuerpo prose">
+      <slot />
+    </article>
+
+    <aside class="articulo-aside">
+      <div class="aside-bloque">
+        <div class="aside-titulo">¿Tiene dudas sobre este tema?</div>
+        <p class="aside-texto">Nuestro equipo en Quetzaltenango puede orientarle sobre su caso específico.</p>
+        <a href="/contacto" class="btn-oro" style="display:block;text-align:center;margin-top:16px;">Contactar ahora</a>
+        <a href="https://wa.me/50242923804" target="_blank" rel="noopener" class="aside-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp directo
+        </a>
+      </div>
+
+      <div class="aside-bloque">
+        <div class="aside-titulo">Áreas relacionadas</div>
+        <div class="aside-links">
+          <a href="/servicios#notarial">Servicios Notariales</a>
+          <a href="/servicios#civil">Familia y Civil</a>
+          <a href="/servicios#laboral">Derecho Laboral</a>
+          <a href="/servicios#penal">Derecho Penal</a>
+          <a href="/servicios#voluntaria">Jurisdicción Voluntaria</a>
+        </div>
+      </div>
+
+      <div class="aside-bloque">
+        <div class="aside-titulo">Oficina en Xela</div>
+        <p class="aside-texto" style="font-size:12px;">
+          0 Av. 8-85, Zona 7<br />
+          Edificio Solares, Of. 406<br />
+          Quetzaltenango, Guatemala
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="articulo-volver">
+    <a href="/blog" class="btn-linea">← Volver al blog</a>
+  </div>
+
+</Base>
+
+<style>
+  .articulo-hero { padding-bottom: 40px; }
+  .articulo-meta {
+    display: flex; gap: 16px; align-items: center;
+    margin-bottom: 16px;
+  }
+  .articulo-categoria {
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--negro); background: var(--oro);
+    padding: 4px 12px;
+  }
+  .articulo-fecha {
+    font-size: 12px; color: var(--gris); font-weight: 300;
+  }
+
+  .articulo-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px var(--px);
+    align-items: start;
+  }
+
+  /* ── PROSA DEL ARTÍCULO ── */
+  .prose {
+    font-size: 15px; color: rgba(255,255,255,0.8);
+    line-height: 1.85; font-weight: 300;
+  }
+  .prose h2 {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 400; color: var(--blanco);
+    margin: 40px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--oro-borde);
+  }
+  .prose h3 {
+    font-family: var(--serif);
+    font-size: 20px; font-weight: 400; color: var(--blanco);
+    margin: 28px 0 10px;
+  }
+  .prose p { margin-bottom: 18px; }
+  .prose ul, .prose ol {
+    padding-left: 0; margin-bottom: 18px;
+    display: flex; flex-direction: column; gap: 8px;
+    list-style: none;
+  }
+  .prose ul li::before { content: '—'; color: var(--oro); margin-right: 10px; }
+  .prose ol { counter-reset: lista; }
+  .prose ol li { counter-increment: lista; }
+  .prose ol li::before {
+    content: counter(lista) '.';
+    color: var(--oro); margin-right: 10px; font-weight: 500;
+  }
+  .prose strong { color: var(--blanco); font-weight: 500; }
+  .prose em { color: var(--oro-claro); font-style: italic; }
+  .prose blockquote {
+    border-left: 2px solid var(--oro);
+    padding: 16px 24px;
+    margin: 24px 0;
+    background: var(--oro-tenue);
+    font-family: var(--serif);
+    font-size: 18px; font-style: italic;
+    color: rgba(255,255,255,0.7);
+  }
+  .prose a { color: var(--oro); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ── ASIDE ── */
+  .articulo-aside {
+    position: sticky; top: 90px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .aside-bloque {
+    background: var(--negro-alt);
+    border: 0.5px solid var(--oro-borde);
+    padding: 24px 20px;
+  }
+  .aside-titulo {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--oro); margin-bottom: 12px;
+  }
+  .aside-texto {
+    font-size: 13px; color: var(--gris); font-weight: 300; line-height: 1.7;
+  }
+  .aside-wa {
+    display: flex; align-items: center; gap: 10px;
+    margin-top: 10px; font-size: 12px; letter-spacing: 1px;
+    color: #4dde85; text-transform: uppercase;
+  }
+  .aside-links {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .aside-links a {
+    font-size: 12px; color: var(--gris); font-weight: 300;
+    transition: color .2s; padding: 4px 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.05);
+  }
+  .aside-links a:hover { color: var(--oro); }
+
+  .articulo-volver {
+    padding: 0 var(--px) 64px;
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  @media (max-width: 900px) {
+    .articulo-wrapper { grid-template-columns: 1fr; }
+    .articulo-aside { position: static; }
+  }
+</style>

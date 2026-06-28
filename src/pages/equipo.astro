@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  titulo="Nuestro Equipo | GSM Soluciones Jurídicas · Quetzaltenango"
+  descripcion="Conozca a los socios fundadores de GSM Soluciones Jurídicas en Quetzaltenango, Xela. Abogados y Notarios especializados en familia, notariado, laboral, administrativo y penal."
+>
+
+<style>
+  .equipo-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--oro-tenue); margin-top: 48px; }
+  .equipo-card { background: var(--negro-alt); padding: 48px 40px; display: flex; flex-direction: column; }
+  .equipo-avatar { width: 90px; height: 90px; border: 0.5px solid var(--oro-borde); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+  .equipo-avatar-ini { font-family: var(--serif); font-size: 32px; color: var(--oro); font-weight: 300; letter-spacing: 2px; }
+  .equipo-cargo { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--oro); margin-bottom: 10px; }
+  .equipo-nombre { font-family: var(--serif); font-size: clamp(22px,3vw,30px); font-weight: 400; color: var(--blanco); margin-bottom: 6px; line-height: 1.2; }
+  .equipo-nombre em { font-style: italic; color: var(--oro); }
+  .equipo-sep { width: 28px; height: 0.5px; background: var(--oro); margin: 20px 0; }
+  .equipo-bio { font-size: 13px; color: var(--gris); line-height: 1.85; font-weight: 300; margin-bottom: 24px; }
+  .equipo-specs { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .equipo-specs li { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--gris); font-weight: 300; }
+  .equipo-specs li::before { content: '—'; color: var(--oro); flex-shrink: 0; }
+
+  .valores-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--oro-tenue); margin-top: 48px; }
+  .valor-card { background: var(--negro); padding: 36px 28px; }
+  .valor-icono { font-family: var(--serif); font-size: 40px; color: rgba(201,168,76,0.15); font-weight: 300; line-height: 1; margin-bottom: 14px; }
+  .valor-titulo { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--blanco); margin-bottom: 10px; }
+  .valor-desc { font-size: 12px; color: var(--gris); line-height: 1.75; font-weight: 300; }
+
+  .frase-bloque { background: var(--negro-alt); border-top: 0.5px solid var(--oro-borde); border-bottom: 0.5px solid var(--oro-borde); padding: 64px var(--px); text-align: center; }
+  .frase-texto { font-family: var(--serif); font-size: clamp(22px,3.5vw,36px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.75); max-width: 700px; margin: 0 auto 20px; line-height: 1.4; }
+  .frase-texto em { color: var(--oro); font-style: normal; }
+  .frase-autor { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--oro); }
+
+  @media(max-width:768px){
+    .equipo-grid { grid-template-columns: 1fr; }
+    .valores-grid { grid-template-columns: 1fr; }
+    .equipo-card { padding: 36px 24px; }
+  }
+</style>
+
+<header class="page-hero">
+  <div class="eyebrow">El equipo</div>
+  <h1>Profesionales a su<br><em>servicio</em> en Xela</h1>
+  <p class="page-hero-sub">Dos abogados y notarios comprometidos con brindar certeza jurídica a cada cliente de Quetzaltenango y el occidente de Guatemala.</p>
+</header>
+
+<section class="seccion">
+  <div class="eyebrow">Socios Fundadores</div>
+  <h2 class="titulo-seccion">Conozca a quienes<br>van a <em>representarle</em></h2>
+  <p class="subtitulo-seccion">Cuando contrata GSM, sabe exactamente quién trabaja en su caso y puede comunicarse directamente con su abogado.</p>
+
+  <div class="equipo-grid">
+    <div class="equipo-card">
+      <div class="equipo-avatar"><div class="equipo-avatar-ini">DM</div></div>
+      <div class="equipo-cargo">Abogado y Notario · Socio Fundador</div>
+      <h2 class="equipo-nombre">Lic. Diego Alejandro<br><em>Machorro García</em></h2>
+      <div class="equipo-sep"></div>
+      <p class="equipo-bio">
+        Licenciado en Ciencias Jurídicas y Sociales, Abogado y Notario, egresado de la 
+        Universidad de San Carlos de Guatemala con sede en Quetzaltenango. Su práctica 
+        profesional se centra en el derecho de familia, asuntos notariales y la tramitación 
+        de procesos civiles ante los órganos jurisdiccionales del occidente del país. 
+        Ha acompañado a familias y personas individuales en los momentos jurídicos más 
+        importantes de su vida, con un enfoque cercano, claro y orientado a resultados concretos. 
+        Como Notario, brinda certeza jurídica en la celebración de contratos, escrituras 
+        públicas y diligencias notariales de diversa naturaleza.
+      </p>
+      <ul class="equipo-specs">
+        <li>Derecho civil de familia</li>
+        <li>Servicios notariales y compraventa de inmuebles</li>
+        <li>Jurisdicción voluntaria</li>
+        <li>Derecho administrativo y trámites municipales</li>
+      </ul>
+    </div>
+
+    <div class="equipo-card">
+      <div class="equipo-avatar"><div class="equipo-avatar-ini">SS</div></div>
+      <div class="equipo-cargo">Abogada y Notaria · Socia Fundadora</div>
+      <h2 class="equipo-nombre">Licda. Sherly Yadira<br><em>Sigüenza Ruíz</em></h2>
+      <div class="equipo-sep"></div>
+      <p class="equipo-bio">
+        Licenciada en Ciencias Jurídicas y Sociales, Abogada y Notaria, con formación 
+        en la Universidad de San Carlos de Guatemala. Su práctica profesional abarca 
+        el litigio laboral, el derecho penal y la tramitación de asuntos en materia 
+        administrativa, representando tanto a personas individuales como a entidades 
+        en sus gestiones ante juzgados, tribunales y organismos del Estado en 
+        Quetzaltenango y el occidente del país. Su enfoque estratégico y su conocimiento 
+        del sistema judicial guatemalteco le permiten dar acompañamiento sólido en 
+        procesos que requieren firmeza técnica y atención al detalle.
+      </p>
+      <ul class="equipo-specs">
+        <li>Juicios laborales y prestaciones</li>
+        <li>Derecho penal y defensa</li>
+        <li>Derecho administrativo</li>
+        <li>Litigio civil contencioso</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="frase-bloque">
+  <p class="frase-texto">"En GSM trabajamos para garantizar <em>certeza jurídica</em> a cada uno de nuestros clientes, protegiendo así su patrimonio."</p>
+  <div class="frase-autor">GSM Soluciones Jurídicas · Quetzaltenango</div>
+</div>
+
+<section class="seccion">
+  <div class="eyebrow">Nuestra filosofía</div>
+  <h2 class="titulo-seccion">Los principios que<br>guían nuestro <em>trabajo</em></h2>
+  <div class="valores-grid">
+    {[
+      { i:'I', t:'Integridad', d:'Actuamos con honestidad en cada etapa del proceso. Le decimos la verdad sobre su caso aunque no sea lo que esperaba escuchar.' },
+      { i:'T', t:'Transparencia', d:'Honorarios claros desde el inicio. Usted sabe exactamente qué se hace y cuánto cuesta en todo momento.' },
+      { i:'C', t:'Compromiso', d:'Su caso no es un número de expediente. Le atendemos directamente y respondemos en menos de 24 horas a cualquier consulta.' },
+      { i:'E', t:'Eficiencia', d:'Conocemos los juzgados, registros y entidades de Quetzaltenango. Eso nos permite mover sus trámites con agilidad real.' },
+      { i:'D', t:'Discreción', d:'La confidencialidad de su caso es sagrada. Todo lo que nos comparte queda estrictamente entre usted y su abogado.' },
+      { i:'A', t:'Accesibilidad', d:'Atendemos de forma presencial en el Edificio Solares de Xela, o virtualmente si usted se encuentra fuera de la ciudad.' },
+    ].map(v => (
+      <div class="valor-card">
+        <div class="valor-icono">{v.i}</div>
+        <div class="linea-oro"></div>
+        <h3 class="valor-titulo">{v.t}</h3>
+        <p class="valor-desc">{v.d}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="seccion seccion-alt" style="text-align:center;">
+  <div class="eyebrow" style="justify-content:center;">¿Listo para comenzar?</div>
+  <h2 class="titulo-seccion" style="max-width:500px;margin:0 auto 16px;">Agende su cita<br><em>hoy mismo</em></h2>
+  <p class="subtitulo-seccion" style="margin:0 auto 32px;">Atención personalizada — presencial en Quetzaltenango o por videollamada.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="/contacto" class="btn-oro">Contactar ahora</a>
+    <a href="https://wa.me/50242923804" target="_blank" rel="noopener" class="btn-linea">WhatsApp directo</a>
+  </div>
+</section>
+
+</Base>
