@@ -176,10 +176,10 @@ const articulos = (await getCollection('blog'))
   <p class="subtitulo-seccion">Cobertura integral en las principales ramas del derecho guatemalteco, con atención personalizada en cada caso.</p>
   <div class="grilla grilla-3">
     {[
-      { num:'01', titulo:'Servicios Notariales', desc:'Escrituras, contratos, compraventa de inmuebles y gestión completa ante el Registro de la Propiedad.', href:'/servicios#notarial' },
-      { num:'02', titulo:'Asuntos Civiles de Familia', desc:'Divorcios, pensiones alimenticias, patria potestad, guardas y sucesiones hereditarias.', href:'/servicios#civil' },
-      { num:'03', titulo:'Juicios Laborales', desc:'Representación de trabajadores y empresas ante los Juzgados de Trabajo de Quetzaltenango.', href:'/servicios#laboral' },
-      { num:'04', titulo:'Trámites Municipales', desc:'Gestiones ante la Municipalidad de Quetzaltenango y entidades administrativas del occidente.', href:'/servicios#municipal' },
+      { num:'01', titulo:'Servicios Notariales', desc:'Escrituras, contratos, compraventa de inmuebles, testamentos, donaciones y documentos privados.', href:'/servicios#notarial' },
+      { num:'02', titulo:'Asuntos Civiles', desc:'Divorcios, pensiones alimenticias, patria potestad, titulaciones supletorias, alteración de linderos, obras peligrosas, arrendamiento y desahucio, entre otros. ', href:'/servicios#civil' },
+      { num:'03', titulo:'Juicios Laborales', desc:'Demandas por Despido Injustificado, cobro de prestaciones irrenunciables, representación de patronos, Compliance Laboral a empresas. ', href:'/servicios#laboral' },
+      { num:'04', titulo:'Trámites Municipales', desc:'Descarga matricular, Aviso notarial de traspaso, certificaciones municipales, servicios nuevos y demás gestiones ante demás autoridades administrativas.', href:'/servicios#municipal' },
       { num:'05', titulo:'Derecho Penal', desc:'Defensa penal y representación de víctimas ante el MP y tribunales penales de Xela.', href:'/servicios#penal' },
       { num:'06', titulo:'Jurisdicción Voluntaria', desc:'Cambios de nombre, rectificación de partidas y demás diligencias ante juez competente.', href:'/servicios#voluntaria' },
     ].map(s => (
@@ -200,7 +200,7 @@ const articulos = (await getCollection('blog'))
     <div>
       <div class="eyebrow">Cómo trabajamos</div>
       <h2 class="titulo-seccion">Un proceso <em>claro</em><br>y sin sorpresas</h2>
-      <p class="subtitulo-seccion">Desde la primera llamada hasta el cierre del caso, usted sabe exactamente qué está pasando y cuánto cuesta.</p>
+      <p class="subtitulo-seccion">Desde la consulta inicial hasta el cierre del caso, mantenemos comunicación constante con nuestros clientes para que sepan qué está pasando realmente.</p>
       <a href="/contacto" class="btn-oro">Agendar cita</a>
     </div>
     <div class="proceso-lista">
@@ -222,9 +222,9 @@ const articulos = (await getCollection('blog'))
   </div>
   <div class="grilla grilla-4" style="margin-top:48px;">
     {[
-      { num:'+10', label:'Años de experiencia' },
+      { num:'+6', label:'Áreas de Derecho' },
       { num:'Xela', label:'Con sede en Quetzaltenango' },
-      { num:'2', label:'Abogados especializados' },
+      { num:'2', label:'Abogados y Notarios' },
       { num:'24h', label:'Tiempo de respuesta' },
     ].map(s => (
       <div class="card" style="text-align:center;padding:40px 20px;">
@@ -239,8 +239,8 @@ const articulos = (await getCollection('blog'))
 {articulos.length > 0 && (
   <section class="seccion">
     <div class="eyebrow">Blog jurídico</div>
-    <h2 class="titulo-seccion">Información legal<br>para <em>Guatemala</em></h2>
-    <p class="subtitulo-seccion">Artículos escritos por nuestro equipo para ayudarle a entender sus derechos.</p>
+    <h2 class="titulo-seccion">Información <br>de <em>su interés</em></h2>
+    <p class="subtitulo-seccion">Artículos escritos por nuestros Abogados y Notarios para ayudarle a comprender su caso.</p>
     <div class="blog-prev-grid">
       {articulos.map(a => (
         <a href={`/blog/${a.slug}`} class="blog-prev-card">
