@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Legal | GSM Soluciones Jurídicas · Quetzaltenango</title>
+  <meta name="description" content="Artículos y guías legales para Guatemala. Información clara sobre derecho civil, laboral, penal y trámites notariales en Quetzaltenango." />
+  <link rel="canonical" href="https://abogadosxelagsm.com/blog.html" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── GRID DE ARTÍCULOS ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--oro-tenue);
+      margin-top: 48px;
+    }
+    .blog-card {
+      background: var(--negro-alt);
+      padding: 36px 28px;
+      display: flex; flex-direction: column;
+      transition: background .2s;
+    }
+    .blog-card:hover { background: var(--negro-card); }
+
+    .blog-categoria {
+      font-size: 9px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--oro);
+      margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .blog-categoria::before {
+      content: ''; display: block;
+      width: 16px; height: 0.5px; background: var(--oro);
+    }
+    .blog-titulo {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2.2vw, 22px);
+      font-weight: 400; color: var(--blanco);
+      line-height: 1.3; margin-bottom: 14px;
+      flex-grow: 1;
+    }
+    .blog-titulo em { font-style: italic; color: var(--oro); }
+    .blog-extracto {
+      font-size: 12px; color: var(--gris);
+      line-height: 1.8; font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .blog-meta {
+      display: flex; justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 0.5px solid rgba(255,255,255,0.06);
+      font-size: 11px; color: rgba(255,255,255,0.25);
+    }
+    .blog-leer {
+      font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--oro);
+      transition: letter-spacing .2s;
+    }
+    .blog-card:hover .blog-leer { letter-spacing: 3px; }
+
+    /* ── ARTÍCULO DESTACADO ── */
+    .blog-destacado {
+      background: var(--negro-alt);
+      border: 0.5px solid var(--oro-borde);
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 1px;
+    }
+    .dest-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 9px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--negro);
+      background: var(--oro); padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+    .dest-titulo {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 300; line-height: 1.2;
+      color: var(--blanco); margin-bottom: 16px;
+    }
+    .dest-titulo em { font-style: italic; color: var(--oro); }
+    .dest-texto {
+      font-size: 13px; color: var(--gris);
+      line-height: 1.85; font-weight: 300;
+      margin-bottom: 28px;
+    }
+    .dest-visual {
+      background: var(--negro-card);
+      border: 0.5px solid var(--oro-tenue);
+      height: 100%; min-height: 220px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .dest-num {
+      font-family: var(--serif);
+      font-size: 120px; color: rgba(201,168,76,0.07);
+      font-weight: 300; line-height: 1;
+      user-select: none;
+    }
+
+    /* ── TEMAS ── */
+    .temas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--oro-tenue);
+      margin-top: 48px;
+    }
+    .tema-item {
+      background: var(--negro);
+      padding: 24px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .tema-item:hover { background: var(--negro-card); }
+    .tema-nombre {
+      font-size: 12px; color: var(--gris);
+      letter-spacing: 1px;
+    }
+    .tema-count {
+      font-family: var(--serif);
+      font-size: 28px; color: rgba(201,168,76,0.3);
+      font-weight: 300; display: block;
+      margin-bottom: 6px;
+    }
+
+
+    @media(max-width: 900px) {
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .temas-grid { grid-template-columns: repeat(2,1fr); }
+      .blog-destacado { grid-template-columns: 1fr; }
+      .dest-visual { display: none; }
+    }
+    @media(max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="gsm-nav" data-page="Blog"></div>
+
+<header class="page-hero">
+  <div class="eyebrow">Blog jurídico</div>
+  <h1>Información legal<br><em>clara</em> para Guatemala</h1>
+  <p style="font-size:14px;color:var(--gris);margin-top:16px;font-weight:300;max-width:520px;line-height:1.8;">
+    Artículos escritos por nuestro equipo de Quetzaltenango para ayudarle a entender sus derechos y los procesos legales que le afectan.
+  </p>
+</header>
+
+<!-- ═══ ARTÍCULO DESTACADO ═════════════════════════════ -->
+<section class="seccion" aria-labelledby="tit-destacado">
+  <div class="eyebrow">Artículo destacado</div>
+  <div class="blog-destacado">
+    <div>
+      <div class="dest-badge">✦ Más leído</div>
+      <h2 class="dest-titulo" id="tit-destacado">¿Cómo comprar un inmueble<br>en <em>Guatemala</em> sin cometer errores?</h2>
+      <p class="dest-texto">
+        Comprar una propiedad es una de las decisiones más importantes de su vida. 
+        En Guatemala, el proceso implica investigar el inmueble en el Registro de la Propiedad, 
+        revisar gravámenes, pagar impuestos ante la SAT y realizar la inscripción registral. 
+        Le explicamos cada paso para que no haya sorpresas.
+      </p>
+      <a href="contacto.html" class="btn-oro">¿Tiene dudas? Consúltenos</a>
+    </div>
+    <div class="dest-visual" aria-hidden="true">
+      <div class="dest-num">01</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEMAS ════════════════════════════════════════════ -->
+<section class="seccion seccion-alt" aria-labelledby="tit-temas">
+  <div class="eyebrow">Explorar por tema</div>
+  <h2 class="titulo-seccion" id="tit-temas">¿Qué área le <em>interesa?</em></h2>
+  <div class="temas-grid">
+    <div class="tema-item">
+      <span class="tema-count">04</span>
+      <div class="tema-nombre">Notarial e Inmuebles</div>
+    </div>
+    <div class="tema-item">
+      <span class="tema-count">03</span>
+      <div class="tema-nombre">Familia y Civil</div>
+    </div>
+    <div class="tema-item">
+      <span class="tema-count">03</span>
+      <div class="tema-nombre">Laboral</div>
+    </div>
+    <div class="tema-item">
+      <span class="tema-count">02</span>
+      <div class="tema-nombre">Penal</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GRID DE ARTÍCULOS ═════════════════════════════ -->
+<section class="seccion" aria-labelledby="tit-articulos">
+  <div class="eyebrow">Artículos recientes</div>
+  <h2 class="titulo-seccion" id="tit-articulos">Guías y análisis<br>para <em>Quetzaltenango</em></h2>
+
+  <div class="blog-grid">
+
+    <article class="blog-card">
+      <div class="blog-categoria">Laboral</div>
+      <h3 class="blog-titulo">¿Qué hacer si me despidieron <em>sin causa justificada</em> en Xela?</h3>
+      <p class="blog-extracto">Un despido injustificado en Guatemala le da derecho a indemnización equivalente a un mes de salario por año trabajado, más otras prestaciones. Le explicamos los plazos y cómo reclamar.</p>
+      <div class="blog-meta">
+        <span>Derecho Laboral</span>
+        <span class="blog-leer">Leer →</span>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-categoria">Familia</div>
+      <h3 class="blog-titulo">Pensión alimenticia en Guatemala: <em>cuánto corresponde</em> y cómo se fija</h3>
+      <p class="blog-extracto">La pensión alimenticia debe cubrir las necesidades básicas del menor según las posibilidades del obligado. Conozca cómo se calcula y qué ocurre si no se paga.</p>
+      <div class="blog-meta">
+        <span>Civil de Familia</span>
+        <span class="blog-leer">Leer →</span>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-categoria">Notarial</div>
+      <h3 class="blog-titulo">Registro de la Propiedad en Quetzaltenango: <em>guía paso a paso</em></h3>
+      <p class="blog-extracto">Desde la solicitud de certificación hasta la inscripción definitiva. Tiempos reales, costos actualizados y los documentos que necesita tener listos antes de ir.</p>
+      <div class="blog-meta">
+        <span>Servicios Notariales</span>
+        <span class="blog-leer">Leer →</span>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-categoria">Penal</div>
+      <h3 class="blog-titulo">¿Cuáles son mis derechos si me <em>detienen</em> en Guatemala?</h3>
+      <p class="blog-extracto">La Constitución guatemalteca garantiza derechos fundamentales al momento de una detención. Conozca qué puede exigir, qué no debe hacer y cuándo contactar a un abogado.</p>
+      <div class="blog-meta">
+        <span>Derecho Penal</span>
+        <span class="blog-leer">Leer →</span>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-categoria">Voluntaria</div>
+      <h3 class="blog-titulo">Cambio de nombre en Guatemala: <em>requisitos y proceso</em> completo</h3>
+      <p class="blog-extracto">El cambio de nombre propio se tramita ante el Juzgado de Primera Instancia Civil. Le detallamos los documentos necesarios, los tiempos aproximados y los costos actuales en Xela.</p>
+      <div class="blog-meta">
+        <span>Jurisdicción Voluntaria</span>
+        <span class="blog-leer">Leer →</span>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-categoria">Familia</div>
+      <h3 class="blog-titulo">Divorcio voluntario en Guatemala: <em>cuánto tarda</em> y qué necesita</h3>
+      <p class="blog-extracto">Cuando ambas partes están de acuerdo, el divorcio puede resolverse de forma ágil. Explicamos los dos escenarios posibles: ante notario o ante juez, y cuál conviene en cada caso.</p>
+      <div class="blog-meta">
+        <span>Civil de Familia</span>
+        <span class="blog-leer">Leer →</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<div id="gsm-footer"></div>
+<div id="gsm-wa"></div>
+<script src="components.js"></script>
+</body>
+</html>
