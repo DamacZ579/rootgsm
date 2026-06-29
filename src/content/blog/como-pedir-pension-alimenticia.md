@@ -1,6 +1,6 @@
 ---
 titulo: "¿Cómo pedir pensión alimenticia?"
-descripcion: "Esta es una consulta muy frecuente en las oficinas jurídicas, el concepto de alimentos incluye todo lo necesario para el desarrollo de los menores, estudios, medicinas, vestimenta y demás pagos en especie, es por ello que queremos dar a conocer puntos importantes a tener en cuenta previo a iniciar este juicio.” 
+descripcion: "Consideraciones previas a iniciar el Juicio, qué incluye el concepto de alimentos y puntos importantes a tener en cuenta sobre este juicio.” 
 categoria: "Familia"
 fecha: 2025-02-04
 destacado: false
