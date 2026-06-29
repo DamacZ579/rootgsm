@@ -6,7 +6,7 @@ fecha: 2025-02-04
 destacado: false
 ---
 
-Los alimentos, que incluyen todo lo que ya mencionamos anteriormente, requieren un análisis preventivo por parte de la persona que los quiere reclamar junto a su abogado de confianza, puesto que hay documentos previos que es importante revisar para sostener la demanda inicial y el desarrollo del juicio posterior. Es importante que el lector sepa las líneas generales o bases que a continuación se describen.
+Los alimentos, que pueden incluir, estudios, medicinas, vestimenta, ciertos productos en especie y demás, requieren un análisis preventivo por parte de la persona que los quiere reclamar junto a su abogado de confianza, puesto que hay documentos previos que es importante revisar para sostener la demanda inicial y el desarrollo del juicio posterior. Es importante que el lector sepa las líneas generales o bases que a continuación se describen.
 
 ## Consideraciones previas al tramitar la pensión alimenticia
 
