@@ -1,6 +1,6 @@
 ---
 titulo: "¿Cómo pedir pensión alimenticia?"
-descripcion: "Esta pregunta es muy recurrente en las oficinas jurídicas, los alimentos incluyen todo lo necesario para el desarrollo de los menores, estudios, medicinas, vestimenta y demás pagos en especie. Reconocemos que es un tema que puede llegar a convertirse en algo complejo en algunos casos específicos y es por ello que queremos dar a conocer puntos importantes a tener en cuenta previo a iniciar este juicio. Es necesario aclarar que este artículo desarrollará únicamente los alimentos fijados en sentencia judicial” 
+descripcion: "Esta es una consulta muy frecuente en las oficinas jurídicas, el concepto de alimentos incluye todo lo necesario para el desarrollo de los menores, estudios, medicinas, vestimenta y demás pagos en especie, es por ello que queremos dar a conocer puntos importantes a tener en cuenta previo a iniciar este juicio.” 
 categoria: "Familia"
 fecha: 2025-02-04
 destacado: false
