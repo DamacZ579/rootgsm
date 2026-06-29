@@ -1,6 +1,6 @@
 ---
 titulo: "¿Cómo pedir pensión alimenticia?"
-descripcion: "Consideraciones previas a iniciar el Juicio, qué incluye el concepto de alimentos y puntos importantes a tener en cuenta sobre este juicio.” 
+descripcion: "Qué incluye el concepto de alimentos y puntos importantes a tener en cuenta sobre este juicio.” 
 categoria: "Familia"
 fecha: 2025-02-04
 destacado: false
