@@ -104,50 +104,50 @@ import Base from '../layouts/Base.astro';
     <div class="contacto-form-bloque">
       <h2 class="form-titulo">Cuéntenos su <em>caso</em></h2>
       <p class="form-sub">Complete el formulario y le contactamos para coordinar su cita.</p>
-      <form id="contacto-form" novalidate>
-        <div class="form-fila">
-          <div class="form-grupo">
-            <label class="form-label" for="nombre">Nombre completo</label>
-            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Juan Pérez" autocomplete="name" required />
-          </div>
-          <div class="form-grupo">
-            <label class="form-label" for="telefono">Teléfono</label>
-            <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="5555 1234" autocomplete="tel" />
-          </div>
-        </div>
-        <div class="form-grupo">
-          <label class="form-label" for="correo">Correo electrónico</label>
-          <input class="form-input" type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" autocomplete="email" required />
-        </div>
-        <div class="form-grupo">
-          <label class="form-label" for="servicio">Área de consulta</label>
-          <select class="form-select" id="servicio" name="servicio">
-            <option value="" disabled selected>Seleccione un área</option>
-            <option value="notarial">Servicios Notariales / Inmuebles</option>
-            <option value="civil">Asuntos Civiles de Familia</option>
-            <option value="laboral">Juicios Laborales</option>
-            <option value="municipal">Trámites Municipales</option>
-            <option value="penal">Derecho Penal</option>
-            <option value="voluntaria">Jurisdicción Voluntaria</option>
-            <option value="otro">Otro / No estoy seguro</option>
-          </select>
-        </div>
-        <div class="form-grupo">
-          <label class="form-label" for="modalidad">Modalidad de consulta</label>
-          <select class="form-select" id="modalidad" name="modalidad">
-            <option value="" disabled selected>Presencial o virtual</option>
-            <option value="presencial">Presencial — Oficina en Xela</option>
-            <option value="virtual">Virtual — Videollamada</option>
-            <option value="whatsapp">WhatsApp</option>
-          </select>
-        </div>
-        <div class="form-grupo">
-          <label class="form-label" for="mensaje">Descripción breve del caso</label>
-          <textarea class="form-input form-textarea" id="mensaje" name="mensaje" placeholder="Cuéntenos en pocas palabras qué necesita resolver…"></textarea>
-        </div>
-        <button type="submit" class="form-submit">Enviar consulta →</button>
-        <p class="form-aviso">Sus datos son confidenciales y no se comparten con terceros.</p>
-      </form>
+      <form action="https://formspree.io/f/mgoglkgo" method="POST">
+  <div class="form-fila">
+    <div class="form-grupo">
+      <label class="form-label" for="nombre">Nombre completo</label>
+      <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Juan Pérez" autocomplete="name" required />
+    </div>
+    <div class="form-grupo">
+      <label class="form-label" for="telefono">Teléfono</label>
+      <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="5555 1234" autocomplete="tel" />
+    </div>
+  </div>
+  <div class="form-grupo">
+    <label class="form-label" for="correo">Correo electrónico</label>
+    <input class="form-input" type="email" id="correo" name="email" placeholder="correo@ejemplo.com" autocomplete="email" required />
+  </div>
+  <div class="form-grupo">
+    <label class="form-label" for="servicio">Área de consulta</label>
+    <select class="form-select" id="servicio" name="servicio">
+      <option value="" disabled selected>Seleccione un área</option>
+      <option value="notarial">Servicios Notariales / Inmuebles</option>
+      <option value="civil">Asuntos Civiles de Familia</option>
+      <option value="laboral">Juicios Laborales</option>
+      <option value="municipal">Trámites Municipales</option>
+      <option value="penal">Derecho Penal</option>
+      <option value="voluntaria">Jurisdicción Voluntaria</option>
+      <option value="otro">Otro / No estoy seguro</option>
+    </select>
+  </div>
+  <div class="form-grupo">
+    <label class="form-label" for="modalidad">Modalidad de consulta</label>
+    <select class="form-select" id="modalidad" name="modalidad">
+      <option value="" disabled selected>Presencial o virtual</option>
+      <option value="presencial">Presencial — Oficina en Xela</option>
+      <option value="virtual">Virtual — Videollamada</option>
+      <option value="whatsapp">WhatsApp</option>
+    </select>
+  </div>
+  <div class="form-grupo">
+    <label class="form-label" for="mensaje">Descripción breve del caso</label>
+    <textarea class="form-input form-textarea" id="mensaje" name="mensaje" placeholder="Cuéntenos en pocas palabras qué necesita resolver…"></textarea>
+  </div>
+  <button type="submit" class="form-submit">Enviar consulta →</button>
+  <p class="form-aviso">Sus datos son confidenciales y no se comparten con terceros.</p>
+</form>
       <div class="form-exito" id="form-exito" role="alert">
         <p>Gracias, hemos recibido su consulta.</p>
         <small>Le contactaremos para coordinar su cita.</small>
