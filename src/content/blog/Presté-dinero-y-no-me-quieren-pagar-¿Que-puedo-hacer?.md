@@ -1,6 +1,6 @@
 ---
 titulo: "Presté dinero y no me quieren pagar ¿Qué puedo hacer?"
-descripcion: "Muchas veces, de buena fe, prestamos dinero a personas que prometen devolver el dinero dentro de un cierto plazo, a continuación le brindamos importantes conceptos básicos”.
+descripcion: "Muchas veces, de buena fe, prestamos dinero a personas que prometen devolver el dinero dentro de un cierto plazo, a continuación le brindamos importantes conceptos básicos.”
 categoria: "Civil"
 fecha: 2025-06-01
 destacado: false
