@@ -1,6 +1,6 @@
 ---
 titulo: "Presté dinero y no me quieren pagar ¿Qué puedo hacer?"
-descripcion: "Muchas veces, ya sea por exceso de confianza o buena fe, prestamos dinero a personas que prometen devolver el dinero dentro de un plazo razonable, luego con el paso del tiempo y los impagos nos cuestionamos si realmente cometimos un error”.
+descripcion: "Muchas veces, de buena fe, prestamos dinero a personas que prometen devolver el dinero dentro de un cierto plazo, luego con el paso del tiempo y los impagos nos cuestionamos si realmente cometimos un error”.
 categoria: "Civil"
 fecha: 2025-06-01
 destacado: false
@@ -28,3 +28,4 @@ La creación de este registro por el decreto 51-2007 del Congreso de la Repúbli
 ## Conclusión
 
 El hecho de prestar dinero a una persona de confianza no quiere decir que se pueda permitir otorgar el dinero de palabra o sin garantía previa, puesto que el pago dependerá solo de la voluntad del deudor y si son cantidades fuertes de dinero pone en riesgo su patrimonio. Por lo tanto siempre recomendamos asesorarse previo a tomar una decisión patrimonial importante, para que un profesional evalúe su situación y le de a conocer los riesgos existentes al momento de accionar legalmente. En GSM Soluciones Jurídicas estamos al tanto de esta situación y es por ello que trabajamos recuperación de deudas para personas individuales y jurídicas. Recomendamos asesorarse con un profesional si está pensando en otorgar una cantidad de dinero en calidad de préstamo o si desea recuperar un préstamo ya otorgado.
+
