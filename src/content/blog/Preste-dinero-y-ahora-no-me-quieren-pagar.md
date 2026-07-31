@@ -1,5 +1,5 @@
 ---
-titulo: "Presté dinero y ahora no me quieren pagar"
+titulo: "Preste dinero y ahora no me quieren pagar"
 descripcion: "Muchas veces, de buena fe, prestamos dinero a personas que prometen devolver el dinero dentro de un cierto plazo, a continuación le brindamos importantes conceptos básicos”.
 categoria: "civil"
 fecha: 2025-06-01
