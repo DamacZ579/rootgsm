@@ -1,6 +1,6 @@
 ---
 titulo: "Presté dinero y no me quieren pagar ¿Qué puedo hacer?"
-descripcion: "Opciones legales en Guatemala cuando alguien no le devuelve un préstamo de dinero."
+descripcion: "Información importante para obtener la devolución de un préstamo."
 categoria: "Civil"
 fecha: 2025-06-01
 destacado: false
