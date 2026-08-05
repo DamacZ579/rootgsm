@@ -23,8 +23,10 @@ Entrando en la práctica, un Notario es quien redacta contratos de distintos neg
 - Desmembraciones de fincas, 
 - Constituciones de Usufructos, 
 - Transacciones, 
-- Entre muchos otros negocios jurídicos.
+- Entre muchos otros negocios o asuntos jurídicos.
+
 El Notario también, en su oficina o en lugar distinto a requerimiento de parte (del interesado) puede realizar Actas Notariales de Legalización de firmas y de Legalización de Documentos, así como también redactar Actas Notariales de hechos y circunstancias que le consten, como por ejemplo: 
+
 - De matrimonio, 
 - sobrevivencia, 
 - de arresto domiciliario (en casos de hechos de tránsito), 
@@ -37,6 +39,7 @@ El Notario también, en su oficina o en lugar distinto a requerimiento de parte 
 ## Asuntos de Jurisdicción Voluntaria
 
 Estos se refieren a todos los actos en los cuales no existe litigio o conflictos entre las partes, pero es necesario llevar el trámite ante un Notario para que produzca efectos jurídicos, ya que será él quien controlará el proceso y emitirá los documentos correspondientes para su posterior inscripción en los diferentes registros según sea el caso. Dentro de estos asuntos tenemos:
+
 - Proceso sucesorio Intestado / Testado,
 - Cambio de nombre,
 - Ausencia,
