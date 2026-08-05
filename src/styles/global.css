@@ -2,16 +2,16 @@
 
 /* ─── TOKENS ─────────────────────────────────────────────── */
 :root {
-  --negro:      #0d0d12;
-  --negro-alt:  #111118;
-  --negro-card: #16161f;
+  --negro:      #1a2035;
+  --negro-alt:  #1f2740;
+  --negro-card: #243050;
   --oro:        #C9A84C;
   --oro-claro:  #e0c06a;
   --oro-tenue:  rgba(201,168,76,0.12);
   --oro-borde:  rgba(201,168,76,0.22);
-  --blanco:     #ffffff;
-  --gris:       rgba(255,255,255,0.45);
-  --gris-claro: rgba(255,255,255,0.22);
+  --blanco:     #eef0f8;
+  --gris:       rgba(238,240,248,0.55);
+  --gris-claro: rgba(238,240,248,0.22);
 
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans:  'Montserrat', sans-serif;
