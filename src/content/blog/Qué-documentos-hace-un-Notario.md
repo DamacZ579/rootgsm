@@ -12,13 +12,14 @@ Cuando una persona necesita realizar una compra o vender un inmueble, generalmen
 
 El Notario en Guatemala es un profesional del derecho quien es depositario del Protocolo (Papel Sellado Especial para Protocolo), encargado de recibir, interpretar y dar forma a la voluntad de las partes redactando el instrumento adecuado. El Notario también está autorizado para conocer y tramitar asuntos de jurisdicción voluntaria (más adelante explicaremos qué son) y dar fe de hechos que presencie y circunstancias que le consten a través de Actas Notariales.
 
-## Qué hace un Notario
+## Qué hace un Notario:
+## Escrituras Públicas
 
-Entrando en la práctica, un Notario es quien redacta contratos de distintos negocios jurídicos en Escrituras Públicas, por ejemplo: 
+Entrando en la práctica, un Notario es quien redacta contratos de distintos negocios o asuntos jurídicos en Escrituras Públicas, por ejemplo: 
 - Compraventas de inmuebles, 
 - Donaciones entre vivos, 
 - Testamentos, 
-- Mandatos
+- Mandatos,
 - Constitución de Sociedades lucrativas, 
 - Desmembraciones de fincas, 
 - Constituciones de Usufructos, 
@@ -26,7 +27,7 @@ Entrando en la práctica, un Notario es quien redacta contratos de distintos neg
 - Entre muchos otros negocios o asuntos jurídicos.
 
 
-
+## Actas Notariales
 El Notario también, en su oficina o en lugar distinto a requerimiento de parte (del interesado) puede realizar Actas Notariales de Legalización de firmas y de Legalización de Documentos, así como también redactar Actas Notariales de hechos y circunstancias que le consten, como por ejemplo: 
 
 - De matrimonio, 
